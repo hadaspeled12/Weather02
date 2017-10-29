@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Weather</string>
+
+    <!-- Text to display in the list when there are no earthquakes [CHAR LIMIT=NONE] -->
+    <string name="no_weathers">No weathers found.</string>
+
+    <!-- Error message when there is no internet connectivity [CHAR LIMIT=NONE] -->
+    <string name="no_internet_connection">No internet connection.</string>
+
+    <!-- dummy text for the place until I fix this -->
+    <string name="dummy_place">Tel - Aviv</string>
+
+    <!-- button to Forecast -->
+    <string name="forecast_button">Forecast</string>
+
+</resources>

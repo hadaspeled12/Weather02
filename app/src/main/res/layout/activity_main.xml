@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#EEEEEE">
+
+    <!-- Information layout  -->
+    <LinearLayout
+        android:id="@+id/today_information_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- Day of the week TextView  -->
+        <TextView
+            android:id="@+id/today_day_of_the_week_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Friday"
+
+            android:textSize="36dp"/>
+        <!-- Today TextView  -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Today"
+
+            android:textSize="16dp"/>
+        <!-- Date TextView  -->
+        <TextView
+            android:id="@+id/today_date_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Oct 27, 2017"
+
+            android:textSize="16dp"/>
+    </LinearLayout>
+    <!-- Place of forecast TextView  -->
+    <TextView
+        android:id="@+id/today_place_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Tel - Aviv"
+        android:layout_alignParentRight="true"
+
+        android:textSize="24dp"/>
+    <!-- Button to Forecast -->
+    <Button
+        android:id="@+id/today_forecast_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/today_place_text"
+        android:layout_alignParentRight="true"
+        android:text="@string/forecast_button"/>
+    <!-- List of forecast for next X hours ListView  -->
+    <ListView
+        android:id="@+id/today_list"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/today_information_layout"/>
+
+    <!-- Empty view is only visible when the list has no items. -->
+    <TextView
+        android:id="@+id/today_empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <!-- Loading indicator for user feedback between queries to USGS -->
+    <ProgressBar
+        android:id="@+id/today_loading_indicator"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

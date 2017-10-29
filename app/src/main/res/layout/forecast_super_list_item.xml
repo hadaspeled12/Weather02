@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for a single list item in the today's forecast -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+
+    android:background="#EEEEEE">
+    <!-- Description TextView -->
+    <TextView
+        android:id="@+id/forecast_super_description_text_view"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:text="Partly Cloudy"
+
+        android:textSize="12sp"/>
+
+    <!-- Time TextView -->
+    <TextView
+        android:id="@+id/forecast_super_time_text_view"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:text="12:00"
+
+        android:textSize="12sp"/>
+    <!-- Temperature TextView -->
+    <TextView
+        android:id="@+id/forecast_super_temp_text_view"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:text="20 \u2103"
+
+        android:textSize="12sp"/>
+    <!-- Humidity TextView -->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Humidity:"
+
+        android:textSize="12sp"/>
+    <!-- Humidity TextView -->
+    <TextView
+        android:id="@+id/forecast_super_humidity_text_view"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:text="80%"
+
+        android:textSize="12sp"/>
+</LinearLayout>

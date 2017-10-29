@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for a single list item in the week's forecast -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+
+    android:background="#EEEEEE">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:id="@+id/forecast_layout">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <!-- Day TextView -->
+            <TextView
+                android:id="@+id/forecast_item_day_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center"
+                tools:text="Sat"
+
+                android:textSize="24sp"
+                android:textColor="#0D47A1"/>
+            <!-- Date TextView -->
+            <TextView
+                android:id="@+id/forecast_item_date_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_gravity="center"
+                tools:text="Oct 27, 2017"
+
+                android:textSize="12sp"
+                android:textColor="#0D47A1"/>
+
+        </LinearLayout>
+        <!-- Description layout -->
+        <LinearLayout
+            android:id="@+id/forecast_item_description_layout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!-- Description image -->
+            <ImageView
+                android:id="@+id/forecast_item_description_image"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                tools:src="@drawable/icons8_sunny"/>
+            <!-- Description TextView -->
+            <TextView
+                android:id="@+id/forecast_item_description_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                tools:text="Partly Cloudy"
+
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+        <!-- Temperature Layout -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <!-- Minimum Temperature TextView -->
+            <TextView
+                android:id="@+id/forecast_item_min_temp_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                tools:text="20 - "
+
+                android:textSize="16sp"/>
+            <!-- Maximum Temperature TextView -->
+            <TextView
+                android:id="@+id/forecast_item_max_temp_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                tools:text="25 \u2103"
+
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+        <!-- Humidity TextView -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Humidity:"
+            android:paddingLeft="16dp"
+
+            android:textSize="12sp"/>
+        <!-- Humidity TextView -->
+        <TextView
+            android:id="@+id/forecast_item_humidity_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="80%"
+
+            android:textSize="12sp"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/forecast_item_list"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+</LinearLayout>
