@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -101,6 +102,7 @@ public class ForecastAdapter extends ArrayAdapter<MasterWeather> {
 
         //Find the ListView in the forecast_list_item.xml layout with the ID list.
         ListView listView = (ListView) listItemView.findViewById(R.id.forecast_item_list);
+
         mForecastSupreAdapter = new ForecastSuperAdapter(mContext, currentMasterWeather.getListOfWeathers());
         listView.setAdapter(mForecastSupreAdapter);
         listView.setVisibility(View.GONE);

@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -63,27 +64,6 @@ public class ForecastActivity extends AppCompatActivity implements LoaderManager
          * so the list can be populated in the user interface
          */
         forecastListView.setAdapter(mForecastAdapter);
-
-        // Set on item click to show detailed forecast for that day
-        // TODO: 29/10/2017 - Fix onClick listener -
-        // This listener only works once to open the forecast of that day.
-        // It doesn't hear a second click, doesn't get to:
-        // Log.e(LOG_TAG,"item was clicked!!!");
-        forecastListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                // Find the current MasterWeather that was clicked on
-                Log.e(LOG_TAG,"item was clicked!!!");
-                ListView listView = (ListView) view.findViewById(R.id.forecast_item_list);
-                Log.e(LOG_TAG, "get visibility 1 : " + listView.getVisibility());
-                if (listView.getVisibility() == View.GONE) {
-                    listView.setVisibility(View.VISIBLE);
-                    Log.e(LOG_TAG, "get visibility 2 : " + listView.getVisibility() + " == " + View.VISIBLE);
-                } else {
-                    listView.setVisibility(View.GONE);
-                }
-            }
-        });
 
         //Get details on the ConnectivityManager to check state of network connectivity
         ConnectivityManager connMgr = (ConnectivityManager)
@@ -168,5 +148,18 @@ public class ForecastActivity extends AppCompatActivity implements LoaderManager
             }
         }
         return result;
+    }
+
+    // Set on item click to show detailed forecast for that day
+
+    public void displayDetailedForecast(View view) {
+        // Find the current MasterWeather that was clicked on
+        Log.e(LOG_TAG,"item was clicked!!!");
+        ListView listView = (ListView) view.findViewById(R.id.forecast_item_list);
+        if (listView.getVisibility() == View.GONE) {
+            listView.setVisibility(View.VISIBLE);
+        } else {
+            listView.setVisibility(View.GONE);
+        }
     }
 }
