@@ -104,24 +104,20 @@ public class MasterWeather {
 
     /** Get the description's image resource */
     public int getImageResourceId() {
-        int imageResourceId;
-        switch (mDescription) {
-            case "Partly Cloudy":
-                imageResourceId = R.drawable.icons8_partlycloudy;
-                break;
-            case "Cloudy":
-            case "Clouds":
-            case "Fog":
-                imageResourceId = R.drawable.icons8_cloud;
-                break;
-            case "Clear":
-                imageResourceId = R.drawable.icons8_sunny;
-                break;
-            case "Rain":
-            default:
-                imageResourceId = R.drawable.icons8_rain;
-                break;
+        int imageResource = R.drawable.icons8_sunny;
+        boolean isCloudy = false;
+        for (Weather mWeather : getListOfWeathers()){
+            if (mWeather.getDescription().equals("Rain")){
+                imageResource = R.drawable.icons8_rain;
+                return imageResource;
+            } else if (mWeather.getDescription().equals("Clouds")){
+                isCloudy = true;
+            }
         }
-        return imageResourceId;
+
+        if (isCloudy == true){
+            imageResource =R.drawable.icons8_cloud;
+        }
+        return imageResource;
     }
 }

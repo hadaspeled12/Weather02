@@ -107,10 +107,9 @@ public class ForecastAdapter extends ArrayAdapter<MasterWeather> {
         listView.setAdapter(mForecastSupreAdapter);
         listView.setVisibility(View.GONE);
 
-        Log.e("ForecastAdapter","forecast size:" + currentMasterWeather.getListOfWeathers().size());
-
         // Return the whole list item layout so that it can be shown in the ListView.
         return listItemView;
     }
+
 
 }
