@@ -75,6 +75,17 @@ public class MasterWeather {
     }
     /** Get the weather's description. */
     public String getDescription() {
+        String mDescription;
+        switch (getImageResourceId()) {
+            case R.drawable.icons8_rain:
+                mDescription = "Rain";
+                break;
+            case R.drawable.icons8_cloud:
+                mDescription = "Clouds";
+                break;
+            default:
+                mDescription = "Clear";
+        }
         return mDescription;
     }
 
